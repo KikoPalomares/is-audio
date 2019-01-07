@@ -1,6 +1,13 @@
 {
   "name": "@kikopalomares/is-audio",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "author": {
+    "name": "Kiko Palomares",
+    "email": "info@kikopalomares.com",
+    "url": "kikopalomares.com"
+  },
+  "description": "Check if a filepath is a audio file",
+  "license": "MIT",
   "dependencies": {
     "audio-extensions": "0.0.0"
   }
