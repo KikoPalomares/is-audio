@@ -8,6 +8,10 @@
   },
   "description": "Check if a filepath is a audio file",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KikoPalomares/is-audio.git"
+  },
   "dependencies": {
     "audio-extensions": "0.0.0"
   }
