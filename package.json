@@ -1,6 +1,6 @@
 {
   "name": "@kikopalomares/is-audio",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": {
     "name": "Kiko Palomares",
     "email": "info@kikopalomares.com",
@@ -11,9 +11,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KikoPalomares/is-audio.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "bugs": {
     "url": "https://github.com/KikoPalomares/is-audio/issues"
