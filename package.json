@@ -1,29 +1,28 @@
 {
-  "name": "@kikopalomares/is-audio",
-  "version": "0.0.10",
-  "author": {
-    "name": "Kiko Palomares",
-    "email": "info@kikopalomares.com",
-    "url": "https://kikopalomares.com"
-  },
-  "description": "Check if a filepath is an audio file",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KikoPalomares/is-audio.git"
-  },
-  "bugs": {
-    "url": "https://github.com/KikoPalomares/is-audio/issues"
-  },
-  "homepage": "https://github.com/KikoPalomares/is-audio#readme",
-  "dependencies": {
-    "audio-extensions": "0.0.0"
-  },
-  "scripts": {
-    "publish:npm": "npm publish --access public --registry=https://registry.npmjs.org/",
-    "publish:github": "npm publish --registry=https://npm.pkg.github.com/",
-    "publish:all": "npm run publish:npm && npm run publish:github"
-  },
-  "types": "index.d.ts"
-  }
+	"name": "@kikopalomares/is-audio",
+	"version": "0.0.10",
+	"author": {
+		"name": "Kiko Palomares",
+		"email": "info@kikopalomares.com",
+		"url": "https://kikopalomares.com"
+	},
+	"description": "Check if a filepath is an audio file",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KikoPalomares/is-audio.git"
+	},
+	"bugs": {
+		"url": "https://github.com/KikoPalomares/is-audio/issues"
+	},
+	"homepage": "https://github.com/KikoPalomares/is-audio#readme",
+	"dependencies": {
+		"audio-extensions": "0.0.0"
+	},
+	"scripts": {
+		"publish:npm": "npm publish --access public --registry=https://registry.npmjs.org/",
+		"publish:github": "npm publish --registry=https://npm.pkg.github.com/",
+		"publish:all": "npm run publish:npm && npm run publish:github"
+	},
+	"types": "index.d.ts"
 }
