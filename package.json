@@ -21,5 +21,6 @@
   },
   "scripts": {
     "publish:all": "npm publish --access public --registry=https://npm.pkg.github.com/ && npm publish --access public --registry=https://registry.npmjs.org/"
-  }
+  },
+  "types": "index.d.ts"
 }
