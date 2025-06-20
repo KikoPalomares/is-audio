@@ -1,6 +1,6 @@
 {
   "name": "@kikopalomares/is-audio",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": {
     "name": "Kiko Palomares",
     "email": "info@kikopalomares.com",
@@ -20,6 +20,6 @@
     "audio-extensions": "0.0.0"
   },
   "scripts": {
-    "publish:all": "npm publish --registry=https://npm.pkg.github.com/ && npm publish --registry=https://registry.npmjs.org/"
+    "publish:all": "npm publish --access public --registry=https://npm.pkg.github.com/ && npm publish --access public --registry=https://registry.npmjs.org/"
   }
 }
