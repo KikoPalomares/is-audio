@@ -1,5 +1,5 @@
 # is-audio
-Check if a filepath is a audio file
+Check if a file path is an audio file
 
 ## Install
 
