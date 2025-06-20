@@ -20,6 +20,22 @@ isAudio('src/yourFile.txt');
 //=> false
 ```
 
+```ts
+import isAudio from '@kikopalomares/is-audio';
+
+isAudio('src/yourFile.ogg');
+//=> true
+```
+
+## API
+
+`isAudio(filepath: string): boolean`
+
+Checks whether `filepath` ends with a recognized audio extension from the
+[`audio-extensions`](https://www.npmjs.com/package/audio-extensions) list.
+
+The package also includes TypeScript definitions in `index.d.ts`.
+
 ## License
 
 MIT © [Kiko Palomares](https://kikopalomares.com)
