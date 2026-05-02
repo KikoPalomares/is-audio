@@ -34,6 +34,17 @@ jobs:
       - name: Run type checks
         run: npm run typecheck
 
+      - name: Validate release tag
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          TAG="${GITHUB_REF_NAME}"
+          if [ "$TAG" != "v$VERSION" ]; then
+            echo "Tag $TAG does not match package version $VERSION"
+            exit 1
+          fi
+
+      - name: Check npm package contents
+        run: npm publish --dry-run
+
       - name: Publish to npm
         run: npm publish
-

@@ -1,6 +1,6 @@
 {
 	"name": "@kikopalomares/is-audio",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"type": "module",
 	"author": {
 		"name": "Kiko Palomares",
@@ -8,6 +8,15 @@
 		"url": "https://kikopalomares.com"
 	},
 	"description": "Check if a filepath is an audio file",
+	"keywords": [
+		"audio",
+		"extension",
+		"filepath",
+		"file",
+		"mime",
+		"esm",
+		"commonjs"
+	],
 	"license": "MIT",
 	"main": "./index.cjs",
 	"module": "./index.js",
@@ -37,6 +46,8 @@
 	"engines": {
 		"node": ">=18"
 	},
+	"sideEffects": false,
+	"packageManager": "npm@11.11.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/KikoPalomares/is-audio.git"
@@ -51,7 +62,8 @@
 	"scripts": {
 		"test": "node --test test/*.test.cjs test/*.test.mjs",
 		"pack:dry-run": "npm pack --dry-run",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"prepublishOnly": "npm test && npm run typecheck"
 	},
 	"devDependencies": {
 		"@types/node": "^24.0.0",
