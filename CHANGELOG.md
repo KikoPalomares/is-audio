@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- Reworked the README for package consumers.
+- Moved maintainer and release guidance to `AGENTS.md`.
+
 ## 0.2.0
 
 - Modernized the package for dual CommonJS and ESM usage.

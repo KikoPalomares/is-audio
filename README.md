@@ -1,6 +1,9 @@
 # is-audio
 
-Check if a filepath points to a known audio file extension.
+Check whether a filepath looks like an audio file.
+
+`is-audio` is a tiny utility for extension-based checks. It does not read the
+file, inspect binary contents, or detect the real MIME type.
 
 ## Install
 
@@ -15,10 +18,10 @@ npm install @kikopalomares/is-audio
 ```js
 const isAudio = require('@kikopalomares/is-audio');
 
-isAudio('src/yourFile.mp3');
+isAudio('uploads/song.mp3');
 //=> true
 
-isAudio('src/yourFile.txt');
+isAudio('uploads/document.pdf');
 //=> false
 ```
 
@@ -27,7 +30,7 @@ isAudio('src/yourFile.txt');
 ```js
 import isAudio from '@kikopalomares/is-audio';
 
-isAudio('src/yourFile.ogg');
+isAudio('recordings/session.FLAC');
 //=> true
 ```
 
@@ -36,55 +39,70 @@ isAudio('src/yourFile.ogg');
 ```ts
 import isAudio from '@kikopalomares/is-audio';
 
-isAudio('src/yourFile.ogg');
+const canAcceptFile = isAudio('voice-note.ogg');
 //=> true
+```
+
+## Examples
+
+Validate a user-provided filepath before accepting it:
+
+```js
+import isAudio from '@kikopalomares/is-audio';
+
+function acceptUpload(filepath) {
+  if (!isAudio(filepath)) {
+    throw new Error('Only audio files are supported');
+  }
+
+  return filepath;
+}
+```
+
+Matching is case-insensitive:
+
+```js
+isAudio('TRACK.MP3');
+//=> true
+```
+
+Paths without an audio extension return `false`:
+
+```js
+isAudio('README');
+//=> false
+```
+
+Non-string values return `false`:
+
+```js
+isAudio(null);
+//=> false
 ```
 
 ## API
 
 ### `isAudio(filepath)`
 
-Returns `true` when `filepath` is a string that ends with a recognized audio
-extension. Matching is case-insensitive.
-
-Returns `false` for paths without an extension, non-audio extensions, and
-non-string input.
+Returns `true` when `filepath` is a string ending with a supported audio
+extension.
 
 ```ts
 function isAudio(filepath: string): boolean;
 ```
 
-## Supported extensions
+## Supported Extensions
 
-The extension list is embedded in this package, so there are no runtime
+The supported extension list is embedded in the package, so there are no runtime
 dependencies:
 
 `wav`, `bwf`, `raw`, `aiff`, `flac`, `m4a`, `pac`, `tta`, `wv`, `ast`, `aac`,
 `mp2`, `mp3`, `mp4`, `amr`, `s3m`, `3gp`, `act`, `au`, `dct`, `dss`, `gsm`,
 `m4p`, `mmf`, `mpc`, `ogg`, `oga`, `opus`, `ra`, `sln`, `vox`.
 
-## Development
+## Requirements
 
-```sh
-npm install
-npm test
-npm run typecheck
-npm run pack:dry-run
-```
-
-## Releases
-
-Releases are published to npm from GitHub Actions with npm Trusted Publishing.
-Create a version tag locally and push it:
-
-```sh
-npm version patch
-git push --follow-tags
-```
-
-Use `minor` or `major` instead of `patch` when appropriate. The npm trusted
-publisher should point to this repository, the `publish.yml` workflow, and the
-`npm-release` GitHub environment.
+Node.js 18 or newer.
 
 ## License
 
