@@ -1,6 +1,7 @@
 {
 	"name": "@kikopalomares/is-audio",
 	"version": "0.1.0",
+	"type": "module",
 	"author": {
 		"name": "Kiko Palomares",
 		"email": "info@kikopalomares.com",
@@ -8,6 +9,34 @@
 	},
 	"description": "Check if a filepath is an audio file",
 	"license": "MIT",
+	"main": "./index.cjs",
+	"module": "./index.js",
+	"types": "./index.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./index.d.ts",
+				"default": "./index.js"
+			},
+			"require": {
+				"types": "./index.d.cts",
+				"default": "./index.cjs"
+			}
+		}
+	},
+	"files": [
+		"CHANGELOG.md",
+		"audio-extensions.json",
+		"index.cjs",
+		"index.d.cts",
+		"index.d.ts",
+		"index.js",
+		"license",
+		"README.md"
+	],
+	"engines": {
+		"node": ">=18"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/KikoPalomares/is-audio.git"
@@ -16,13 +45,16 @@
 		"url": "https://github.com/KikoPalomares/is-audio/issues"
 	},
 	"homepage": "https://github.com/KikoPalomares/is-audio#readme",
-	"dependencies": {
-		"audio-extensions": "0.0.0"
+	"publishConfig": {
+		"access": "public"
 	},
 	"scripts": {
-		"publish:npm": "npm publish --access public --registry=https://registry.npmjs.org/",
-		"publish:github": "npm publish --registry=https://npm.pkg.github.com/",
-		"publish:all": "npm run publish:npm && npm run publish:github"
+		"test": "node --test test/*.test.cjs test/*.test.mjs",
+		"pack:dry-run": "npm pack --dry-run",
+		"typecheck": "tsc --noEmit"
 	},
-	"types": "index.d.ts"
+	"devDependencies": {
+		"@types/node": "^24.0.0",
+		"typescript": "^5.8.0"
+	}
 }

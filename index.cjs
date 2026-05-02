@@ -1,11 +1,11 @@
-import { createRequire } from 'node:module';
-import path from 'node:path';
+'use strict';
 
-const require = createRequire(import.meta.url);
+const path = require('node:path');
 const audioExtensions = require('./audio-extensions.json');
+
 const extensions = new Set(audioExtensions);
 
-export default function isAudio(filepath) {
+function isAudio(filepath) {
   if (typeof filepath !== 'string') {
     return false;
   }
@@ -14,3 +14,6 @@ export default function isAudio(filepath) {
 
   return extensions.has(extension);
 }
+
+module.exports = isAudio;
+

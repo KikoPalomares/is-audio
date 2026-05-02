@@ -1,6 +1,4 @@
 /**
  * Check if a filepath is an audio file.
  */
-declare function isAudio(filepath: string): boolean;
-
-export = isAudio;
+export default function isAudio(filepath: string): boolean;
